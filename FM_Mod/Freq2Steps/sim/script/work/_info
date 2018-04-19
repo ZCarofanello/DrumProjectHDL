@@ -1,0 +1,131 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dS:/EEET-461/Drum_Synth/source/IP/FM_Mod/Freq2Steps/sim/script
+Efreq2steps
+Z1 w1523817485
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8../../Freq2Steps.vhd
+Z6 F../../Freq2Steps.vhd
+l0
+L6
+V6:TN[JC1X=OlZlPF5C<QT0
+!s100 ?kLz9SbjEXGcWP3Pllemc3
+Z7 OP;C;10.6c;65
+31
+Z8 !s110 1523817501
+!i10b 1
+Z9 !s108 1523817501.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|../../Freq2Steps.vhd|
+Z11 !s107 ../../Freq2Steps.vhd|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Artl
+R2
+R3
+R4
+DEx4 work 10 freq2steps 0 22 6:TN[JC1X=OlZlPF5C<QT0
+l30
+L15
+V]^zJ9SkA3G20Q1fHaQF^F1
+!s100 9nDU5<moQeoI3DSJj=?J>1
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Efreq2steps_tb
+Z14 w1523817119
+R2
+R3
+R4
+R0
+Z15 8../src/Freq2Steps_tb.vhd
+Z16 F../src/Freq2Steps_tb.vhd
+l0
+L9
+V[42eM=Ag=2C?HORYSaah20
+!s100 oHCP3afVcGfRB2:LOj2fC2
+R7
+31
+R8
+!i10b 1
+R9
+Z17 !s90 -reportprogress|300|-93|-work|work|../src/Freq2Steps_tb.vhd|
+Z18 !s107 ../src/Freq2Steps_tb.vhd|
+!i113 1
+R12
+R13
+Aarch
+R2
+R3
+R4
+Z19 DEx4 work 13 freq2steps_tb 0 22 [42eM=Ag=2C?HORYSaah20
+l28
+L12
+Z20 VE5TY9zfz0:GkjemDlI@1n2
+Z21 !s100 a2Lez:@gZ6[[n:hj9ZEjd2
+R7
+31
+R8
+!i10b 1
+R9
+R17
+R18
+!i113 1
+R12
+R13
+Efreq2stepsmult
+Z22 w1523814148
+R3
+R4
+R0
+Z23 8../../Freq2StepsMult.vhd
+Z24 F../../Freq2StepsMult.vhd
+l0
+L43
+VE>kY776U5F6dCkC[YzGI10
+!s100 nb<BQB51BZf2bIdZd2nRg3
+R7
+31
+R8
+!i10b 1
+R9
+Z25 !s90 -reportprogress|300|-93|-work|work|../../Freq2StepsMult.vhd|
+Z26 !s107 ../../Freq2StepsMult.vhd|
+!i113 1
+R12
+R13
+Asyn
+R3
+R4
+DEx4 work 14 freq2stepsmult 0 22 E>kY776U5F6dCkC[YzGI10
+l79
+L53
+V3O[G>9LNn38V6m?NUKn0P3
+!s100 Af[RAa6>zX?gNH9V:K6970
+R7
+31
+R8
+!i10b 1
+R9
+R25
+R26
+!i113 1
+R12
+R13
