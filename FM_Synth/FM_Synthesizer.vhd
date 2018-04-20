@@ -32,15 +32,15 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
 entity FM_Synthesizer is
-	port (
-		clk                 : in  std_logic                     := '0';             --  clock.clk
-		reset_n             : in  std_logic                     := '0';             --  reset.reset_n
-		addressess   		: in  std_logic_vector(7 downto 0) := (others => '0'); --  avs_s0_addressess
-		write_n      		: in  std_logic                     := '0';             --  write_n
-		writedata    		: in  std_logic_vector(31 downto 0) := (others => '0'); --  writedata
-		byteenable_n 		: in  std_logic_vector(3 downto 0)  := (others => '0'); --  byteenable_n
-		readdata     		: out std_logic_vector(31 downto 0)                     --  readdata
-	);
+  port (
+    clk              : in  std_logic                     := '0';             --  clock.clk
+    reset_n          : in  std_logic                     := '0';             --  reset.reset_n
+    addressess       : in  std_logic_vector(7 downto 0)  := (others => '0'); --  avs_s0_addressess
+    write_n          : in  std_logic                     := '0';             --  write_n
+    writedata        : in  std_logic_vector(31 downto 0) := (others => '0'); --  writedata
+    byteenable_n     : in  std_logic_vector(3 downto 0)  := (others => '0'); --  byteenable_n
+    readdata         : out std_logic_vector(31 downto 0)                     --  readdata
+  );
 end entity FM_Synthesizer;
 
 ARCHITECTURE rtl OF FM_Synthesizer IS
@@ -48,13 +48,13 @@ ARCHITECTURE rtl OF FM_Synthesizer IS
 --Component Declarations
 component avalon_MM_slave_interface IS
   PORT (
-    clk 				: IN  std_logic;
-    reset_n 			: IN  std_logic;
-    we_n 				: IN  std_logic;
-    addr 				: IN  std_logic_vector(7  DOWNTO 0);
-	byteenable_n 		: IN  std_logic_vector(3  DOWNTO 0);
-    din 				: IN  std_logic_vector(31 DOWNTO 0);
-    dout 				: OUT std_logic_vector(31 DOWNTO 0);
+    clk           : IN  std_logic;
+    reset_n       : IN  std_logic;
+    we_n          : IN  std_logic;
+    addr          : IN  std_logic_vector(7  DOWNTO 0);
+    byteenable_n  : IN  std_logic_vector(3  DOWNTO 0);
+    din           : IN  std_logic_vector(31 DOWNTO 0);
+    dout          : OUT std_logic_vector(31 DOWNTO 0);
     --Internal Connections
     
     --Control Signals
@@ -117,17 +117,18 @@ component FM_Mod IS
     clk                 : in  std_logic;
     reset_n             : in  std_logic;
     Data_Req            : in  std_logic;
+    Trigger             : in  std_logic;
     -- Data Inputs
     Pitch               : in  std_logic_vector(15 downto 0);
     Modulation_Dat      : in  std_logic_vector(15 downto 0);
     --ADSR Settings
     Att_M               : in  std_logic_vector(15 downto 0);
     Att_D               : in  std_logic_vector(15 downto 0);
-    Dec_M               : in  std_logic_vector(15 downto 0); 
-    Dec_D               : in  std_logic_vector(15 downto 0);    
-    Sus_D               : in  std_logic_vector(15 downto 0);   
-    Rel_M               : in  std_logic_vector(15 downto 0);   
-    Rel_D               : in  std_logic_vector(15 downto 0); 
+    Dec_M               : in  std_logic_vector(15 downto 0);
+    Dec_D               : in  std_logic_vector(15 downto 0);
+    Sus_D               : in  std_logic_vector(15 downto 0);
+    Rel_M               : in  std_logic_vector(15 downto 0);
+    Rel_D               : in  std_logic_vector(15 downto 0);
     --Audio Output
     Audio_out           : out std_logic_vector(15 downto 0)
 );
@@ -136,7 +137,7 @@ end component FM_Mod;
 -- Signal Declarations
 signal Operator1_Data, Operator2_Data :std_logic_vector(15 downto 0);
 signal Operator3_Data, Operator4_Data :std_logic_vector(15 downto 0);
-signal Data_Req, Trigger :std_logic;
+signal data_req_int, trig_int :std_logic;
 
 --Operator 1 Signals
   signal Op1_Frequency_int :std_logic_vector(15 downto 0):= (others => '0');
@@ -188,7 +189,8 @@ Operator1 : FM_Mod
 port map(
     clk            => clk,
     reset_n        => reset_n,
-    Data_Req       => Data_Req,
+    Data_Req       => data_req_int,
+    Trigger        => trig_int,
     Pitch          => Op1_Frequency_int,
     Modulation_Dat => X"0000",
     Att_M          => Op1_Att_M_int,
@@ -205,7 +207,8 @@ Operator2 : FM_Mod
 port map(
     clk            => clk,
     reset_n        => reset_n,
-    Data_Req       => Data_Req,
+    Data_Req       => data_req_int,
+    Trigger        => trig_int,
     Pitch          => Op2_Frequency_int,
     Modulation_Dat => X"0000",
     Att_M          => Op2_Att_M_int,
@@ -222,7 +225,8 @@ Operator3 : FM_Mod
 port map(
     clk            => clk,
     reset_n        => reset_n,
-    Data_Req       => Data_Req,
+    Data_Req       => data_req_int,
+    Trigger        => trig_int,
     Pitch          => Op3_Frequency_int,
     Modulation_Dat => X"0000",
     Att_M          => Op3_Att_M_int,
@@ -239,7 +243,8 @@ Operator4 : FM_Mod
 port map(
     clk            => clk,
     reset_n        => reset_n,
-    Data_Req       => Data_Req,
+    Data_Req       => data_req_int,
+    Trigger        => trig_int,
     Pitch          => Op4_Frequency_int,
     Modulation_Dat => X"0000",
     Att_M          => Op4_Att_M_int,
@@ -254,16 +259,16 @@ port map(
 
 avalon_bus:avalon_MM_slave_interface
 port map(
-clk 		 => clk,
-reset_n 	 => reset_n,
-we_n 		 => write_n,
-addr 		 => addressess,
+clk      => clk,
+reset_n    => reset_n,
+we_n      => write_n,
+addr      => addressess,
 byteenable_n => byteenable_n,
-din 		 => writedata,
-dout 		 => readdata,
+din      => writedata,
+dout      => readdata,
 --Control Sig 
-Data_Req      => Data_Req,
-Trigger       => Trigger,
+Data_Req      => data_req_int,
+Trigger       => trig_int,
               
 --Data Signal 
 Audio_Dat     => Operator1_Data,
