@@ -38,7 +38,8 @@ ENTITY FSM_ADSR is
         data_req      :IN  std_logic;
         trig_sig      :IN  std_logic;
         timer_sig     :IN  std_logic;
-        current_state :OUT std_logic_vector(3 DOWNTO 0)
+		change_state  :OUT std_logic;
+        current_state :OUT std_logic_vector(4 DOWNTO 0)
         );
 END FSM_ADSR;
 
@@ -52,8 +53,9 @@ constant sustain_s  :std_logic_vector(4 downto 0):= "01000";
 constant release_s  :std_logic_vector(4 downto 0):= "10000";
 
 -- signal declarations
-signal current_state_int  : std_logic_vector(3 downto 0);
-signal next_state         : std_logic_vector(3 downto 0);
+signal current_state_int  : std_logic_vector(4 downto 0);
+signal next_state         : std_logic_vector(4 downto 0);
+signal change_state_int	  : std_logic;
 
 BEGIN   
     current_state <= current_state_int;
@@ -66,6 +68,21 @@ BEGIN
             current_state_int <= next_state;
         END IF;
     END PROCESS;
+	
+	ChangeState_proc:process(clk,reset_n,current_state_int,next_state)
+	begin
+		if(reset_n = '0') then
+			change_state_int <= '1';
+		elsif(clk'event and clk = '0') then
+			if(current_state_int /= next_state) then
+				change_state_int <= '1';
+			else 
+				change_state_int <= '0';
+			end if;
+		end if;
+	end process;
+	
+	change_state <= change_state_int;
         
     ZeCloud:PROCESS(current_state_int, data_req, timer_sig, trig_sig) is
     BEGIN

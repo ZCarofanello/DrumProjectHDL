@@ -30,6 +30,7 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
+use ieee.std_logic_signed.all;
 
 entity FM_Synthesizer is
   port (
@@ -60,6 +61,7 @@ component avalon_MM_slave_interface IS
     --Control Signals
     Data_Req            : out std_logic;
     Trigger             : out std_logic;
+	Alg_Select			: out std_logic_vector(15 downto 0);
     
     --Data Signals
     Audio_Dat           : in  std_logic_vector(15 downto 0);
@@ -140,6 +142,7 @@ signal Operator3_Data, Operator4_Data :std_logic_vector(15 downto 0);
 signal data_req_int, trig_int :std_logic;
 
 --Operator 1 Signals
+  signal Op1_Mod_Data	   :std_logic_vector(15 downto 0):= (others => '0');
   signal Op1_Frequency_int :std_logic_vector(15 downto 0):= (others => '0');
   signal Op1_Feedback_int  :std_logic_vector(15 downto 0):= (others => '0');
   signal Op1_Att_M_int     :std_logic_vector(15 downto 0):= (others => '0');
@@ -151,6 +154,7 @@ signal data_req_int, trig_int :std_logic;
   signal Op1_Rel_D_int     :std_logic_vector(15 downto 0):= (others => '0');
   
   --Operator 2 Signals
+  signal Op2_Mod_Data	   :std_logic_vector(15 downto 0):= (others => '0');
   signal Op2_Frequency_int :std_logic_vector(15 downto 0):= (others => '0');
   signal Op2_Feedback_int  :std_logic_vector(15 downto 0):= (others => '0');
   signal Op2_Att_M_int     :std_logic_vector(15 downto 0):= (others => '0');
@@ -162,6 +166,7 @@ signal data_req_int, trig_int :std_logic;
   signal Op2_Rel_D_int     :std_logic_vector(15 downto 0):= (others => '0');
   
   --Operator 3 Signals
+  signal Op3_Mod_Data	   :std_logic_vector(15 downto 0):= (others => '0');
   signal Op3_Frequency_int :std_logic_vector(15 downto 0):= (others => '0');
   signal Op3_Feedback_int  :std_logic_vector(15 downto 0):= (others => '0');
   signal Op3_Att_M_int     :std_logic_vector(15 downto 0):= (others => '0');
@@ -173,6 +178,7 @@ signal data_req_int, trig_int :std_logic;
   signal Op3_Rel_D_int     :std_logic_vector(15 downto 0):= (others => '0');
   
   --Operator 4 Signals
+  signal Op4_Mod_Data	   :std_logic_vector(15 downto 0):= (others => '0');
   signal Op4_Frequency_int :std_logic_vector(15 downto 0):= (others => '0');
   signal Op4_Feedback_int  :std_logic_vector(15 downto 0):= (others => '0');
   signal Op4_Att_M_int     :std_logic_vector(15 downto 0):= (others => '0');
@@ -181,9 +187,77 @@ signal data_req_int, trig_int :std_logic;
   signal Op4_Dec_D_int     :std_logic_vector(15 downto 0):= (others => '0');
   signal Op4_Sus_D_int     :std_logic_vector(15 downto 0):= (others => '0');
   signal Op4_Rel_M_int     :std_logic_vector(15 downto 0):= (others => '0');
-  signal Op4_Rel_D_int     :std_logic_vector(15 downto 0):= (others => '0'); 
+  signal Op4_Rel_D_int     :std_logic_vector(15 downto 0):= (others => '0');
+  
+  signal Audio_Out 		   :std_logic_vector(15 downto 0):= (others => '0');
+  signal alg_select_int    :std_logic_vector(15 downto 0):= (others => '0');
 
 BEGIN
+
+Alg_out_proc:process(clk,reset_n,Operator1_Data,Operator2_Data,Operator2_Data,Operator4_Data,alg_select_int)
+begin
+	case alg_select_int is
+		when X"0000" => Audio_Out <= Operator1_Data;
+		when X"0001" => Audio_Out <= Operator1_Data;
+		when X"0002" => Audio_Out <= Operator1_Data;
+		when X"0003" => Audio_Out <= Operator1_Data;
+		when X"0004" => Audio_Out <= Operator1_Data + Operator3_Data;
+		when X"0005" => Audio_Out <= Operator1_Data + Operator2_Data + Operator3_Data;
+		when X"0006" => Audio_Out <= Operator1_Data + Operator2_Data + Operator3_Data;
+		when X"0007" => Audio_Out <= Operator1_Data + Operator2_Data + Operator3_Data + Operator4_Data;
+		when others  => Audio_Out <= (others => '0');
+	end case;
+
+end process;
+
+
+Op1_Mod_Dat_proc:process(clk,reset_n,Operator1_Data,Operator2_Data,Operator2_Data,Operator4_Data,alg_select_int)
+begin
+	case alg_select_int is
+		when X"0000" => Op1_Mod_Data <= X"0000";
+		when X"0001" => Op1_Mod_Data <= Operator2_Data;
+		when X"0002" => Op1_Mod_Data <= Operator2_Data + Operator4_Data;
+		when X"0003" => Op1_Mod_Data <= Operator2_Data + Operator3_Data;
+		when X"0004" => Op1_Mod_Data <= Operator2_Data;
+		when X"0005" => Op1_Mod_Data <= Operator4_Data;
+		when X"0006" => Op1_Mod_Data <= X"0000";
+		when X"0007" => Op1_Mod_Data <= X"0000";
+		when others  => Op1_Mod_Data <=(others => '0');
+	end case;
+
+end process;
+
+Op2_Mod_Dat_proc:process(clk,reset_n,Operator1_Data,Operator2_Data,Operator2_Data,Operator4_Data,alg_select_int)
+begin
+	case alg_select_int is
+		when X"0000" => Op2_Mod_Data <= Operator3_Data;
+		when X"0001" => Op2_Mod_Data <= Operator3_Data + Operator4_Data;
+		when X"0002" => Op2_Mod_Data <= Operator3_Data;
+		when X"0003" => Op2_Mod_Data <= X"0000";
+		when X"0004" => Op2_Mod_Data <= X"0000";
+		when X"0005" => Op2_Mod_Data <= Operator4_Data;
+		when X"0006" => Op2_Mod_Data <= X"0000";
+		when X"0007" => Op2_Mod_Data <= X"0000";
+		when others  => Op2_Mod_Data <=(others => '0');
+	end case;
+
+end process;
+
+Op3_Mod_Dat_proc:process(clk,reset_n,Operator1_Data,Operator2_Data,Operator2_Data,Operator4_Data,alg_select_int)
+begin
+	case alg_select_int is
+		when X"0000" => Op3_Mod_Data <= Operator4_Data;
+		when X"0001" => Op3_Mod_Data <= X"0000";
+		when X"0002" => Op3_Mod_Data <= X"0000";
+		when X"0003" => Op3_Mod_Data <= Operator4_Data;
+		when X"0004" => Op3_Mod_Data <= Operator4_Data;
+		when X"0005" => Op3_Mod_Data <= Operator4_Data;
+		when X"0006" => Op3_Mod_Data <= Operator4_Data;
+		when X"0007" => Op3_Mod_Data <= X"0000";
+		when others  => Op3_Mod_Data <=(others => '0');
+	end case;
+
+end process;
 
 Operator1 : FM_Mod 
 port map(
@@ -192,7 +266,7 @@ port map(
     Data_Req       => data_req_int,
     Trigger        => trig_int,
     Pitch          => Op1_Frequency_int,
-    Modulation_Dat => X"0000",
+    Modulation_Dat => Op1_Mod_Data,
     Att_M          => Op1_Att_M_int,
     Att_D          => Op1_Att_D_int,
     Dec_M          => Op1_Dec_M_int,
@@ -210,7 +284,7 @@ port map(
     Data_Req       => data_req_int,
     Trigger        => trig_int,
     Pitch          => Op2_Frequency_int,
-    Modulation_Dat => X"0000",
+    Modulation_Dat => Op2_Mod_Data,
     Att_M          => Op2_Att_M_int,
     Att_D          => Op2_Att_D_int,
     Dec_M          => Op2_Dec_M_int,
@@ -228,7 +302,7 @@ port map(
     Data_Req       => data_req_int,
     Trigger        => trig_int,
     Pitch          => Op3_Frequency_int,
-    Modulation_Dat => X"0000",
+    Modulation_Dat => Op3_Mod_Data,
     Att_M          => Op3_Att_M_int,
     Att_D          => Op3_Att_D_int,
     Dec_M          => Op3_Dec_M_int,
@@ -269,9 +343,10 @@ dout      => readdata,
 --Control Sig 
 Data_Req      => data_req_int,
 Trigger       => trig_int,
+Alg_Select	  => alg_select_int,
               
 --Data Signal 
-Audio_Dat     => Operator1_Data,
+Audio_Dat     => Audio_Out,
 New_Dat       => '1',
               
 --Operator 1  

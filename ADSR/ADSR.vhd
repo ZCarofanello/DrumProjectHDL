@@ -17,7 +17,7 @@
 --
 -------------------------------------------------------------------------------
 --
--- REVisION HisTORY
+-- REVISION HISTORY
 --
 -- _______________________________________________________________________
 -- |   DATE   |  USER   | Ver | Description |
@@ -30,6 +30,7 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
+use ieee.std_logic_signed.all;
 
 ENTITY ADSR is
     PORT(
@@ -54,8 +55,114 @@ END ADSR;
 
 ARCHITECTURE rtl OF ADSR is
 
+component FSM_ADSR is
+    PORT(
+        clk           :IN  std_logic;
+        reset_n       :IN  std_logic;
+        data_req      :IN  std_logic;
+        trig_sig      :IN  std_logic;
+        timer_sig     :IN  std_logic;
+		change_state  :OUT std_logic;
+        current_state :OUT std_logic_vector(4 DOWNTO 0)
+        );
+END component FSM_ADSR;
+
+component generic_counter is
+  port (
+    clk             : in  std_logic; 
+    reset_n         : in  std_logic;
+	enable			: in  std_logic;
+	max_count       : in  std_logic_vector(15 downto 0);
+    output          : out std_logic
+  );  
+end component generic_counter;
+
+component mult is
+  port (
+	dataa			: in  std_logic_vector(15 downto 0);
+	datab           : in  std_logic_vector(15 downto 0);
+    result          : out std_logic_vector(31 downto 0)
+  );  
+end component mult;  
+
+signal CounterReset, change_state,Cnt_Flag :std_logic:= '0';
+signal Max_Cnt_int,audio_mult_out  :std_logic_vector(15 downto 0);
+signal current_slope_int, current_slope_inc :std_logic_vector(15 downto 0);
+signal audio_mult_out_full :std_logic_vector(31 downto 0):=(others => '0');
+signal state :std_logic_vector(4 downto 0):=(others => '0');
 BEGIN
 
- Audio_out <= Audio_in;
+FSM_ADSR_inst: FSM_ADSR
+port map(
+clk           => clk,
+reset_n       => reset_n,
+data_req      => data_req,
+trig_sig      => trigger,
+timer_sig     => Cnt_Flag,
+change_state  => change_state,
+current_state => state
+);
+
+
+duration_proc: process(Att_D,Dec_D,Sus_D,Rel_D)
+begin
+	case state is
+		when "00000" => Max_Cnt_int <= (others => '0');
+		when "00001" => Max_Cnt_int <= (others => '0');
+		when "00010" => Max_Cnt_int <= Att_D;
+		when "00100" => Max_Cnt_int <= Dec_D;
+		when "01000" => Max_Cnt_int <= Sus_D;
+		when "10000" => Max_Cnt_int <= Rel_D;
+		when others  => Max_Cnt_int <= (others => '0');
+	end case;
+end process;
+
+slope_proc: process(Att_M,Dec_M,Rel_M)
+begin
+	case state is
+		when "00000" => current_slope_inc <= (others => '0');
+		when "00001" => current_slope_inc <= (others => '0');
+		when "00010" => current_slope_inc <= Att_M;
+		when "00100" => current_slope_inc <= Dec_M;
+		when "01000" => current_slope_inc <= (others => '0');
+		when "10000" => current_slope_inc <= Rel_M;
+		when others  => current_slope_inc <= (others => '0');
+	end case;
+end process;
+	
+slope_calc_proc: process(clk, reset_n, Att_M,Dec_M,Rel_M,current_Slope_int)
+begin
+    IF(reset_n = '0') THEN
+        current_Slope_int <= (others => '0');
+    ELSIF(clk'EVENT AND clk = '1') THEN
+		if(data_req = '1') then
+			if(unsigned(current_Slope_int) = 0) then
+				current_slope_int <= (others => '0');
+			else
+				current_slope_int <= std_logic_vector(unsigned(current_slope_int) + unsigned(current_slope_inc));
+			end if;
+		end if;
+    END IF;
+end process;
+
+mult_inst:mult
+port map(
+dataa  => Audio_in,
+datab  => current_Slope_int,
+result => audio_mult_out_full
+);
+audio_mult_out <= audio_mult_out_full(15 downto 0);
+
+CounterReset <= reset_n or (not change_state);
+counter_inst: generic_counter
+port map(
+clk         => clk,
+reset_n     => CounterReset,
+enable	    => data_req,
+max_count   => Max_Cnt_int,
+output      => Cnt_Flag
+);
+
+ Audio_out <= audio_mult_out;
  
 END ARCHITECTURE rtl;

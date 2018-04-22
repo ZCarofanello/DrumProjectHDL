@@ -45,6 +45,7 @@ ENTITY avalon_MM_slave_interface IS
     --Control Signals
     Data_Req            : out std_logic;
     Trigger             : out std_logic;
+	Alg_Select			: out std_logic_vector(15 downto 0);
     
     --Data Signals
     Audio_Dat           : in  std_logic_vector(15 downto 0);
@@ -248,6 +249,8 @@ BEGIN
             end if;
         end if;
     end process;
+	
+	Alg_Select <= Alg_Select_int;
   
     --Operator 1 MM Connections
   
