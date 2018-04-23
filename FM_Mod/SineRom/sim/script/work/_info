@@ -1,254 +1,188 @@
 m255
-K4
-z2
+K3
 13
-!s112 1.1
-!i10d 8192
-!i10e 25
-!i10f 100
 cModel Technology
-Z0 dS:/EEET-461/Drum_Synth/source/IP/FM_Mod/Freq2Steps/sim/script
+Z0 dY:\Data_From_1_terra\Class_Code\Drum_Synth\source\DrumProjectHDL\FM_Mod\SineRom\sim\script
 Efreq2steps
-Z1 w1523817485
-Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
-Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
-Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
-R0
-Z5 8../../Freq2Steps.vhd
-Z6 F../../Freq2Steps.vhd
+Z1 w1524182037
+Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z5 dY:\Data_From_1_terra\Class_Code\Drum_Synth\source\DrumProjectHDL\FM_Mod\SineRom\sim\script
+Z6 8../../../Freq2Steps/Freq2Steps.vhd
+Z7 F../../../Freq2Steps/Freq2Steps.vhd
 l0
 L6
-V6:TN[JC1X=OlZlPF5C<QT0
-!s100 ?kLz9SbjEXGcWP3Pllemc3
-Z7 OP;C;10.6c;65
+V7f>Q5S>ec63cdBJ1j5mmO2
+Z8 OV;C;10.1d;51
 31
-Z8 !s110 1523817501
+Z9 !s108 1524542566.724000
+Z10 !s90 -reportprogress|300|-93|-work|work|../../../Freq2Steps/Freq2Steps.vhd|
+Z11 !s107 ../../../Freq2Steps/Freq2Steps.vhd|
+Z12 o-93 -work work -O0
+Z13 tExplicit 1
+!s100 _lL>1G9d0RZ?hFF5AZl?f3
 !i10b 1
-Z9 !s108 1523817501.000000
-Z10 !s90 -reportprogress|300|-93|-work|work|../../Freq2Steps.vhd|
-Z11 !s107 ../../Freq2Steps.vhd|
-!i113 1
-Z12 o-93 -work work
-Z13 tExplicit 1 CvgOpt 0
 Artl
 R2
 R3
 R4
-DEx4 work 10 freq2steps 0 22 6:TN[JC1X=OlZlPF5C<QT0
+DEx4 work 10 freq2steps 0 22 7f>Q5S>ec63cdBJ1j5mmO2
 l30
 L15
-V]^zJ9SkA3G20Q1fHaQF^F1
-!s100 9nDU5<moQeoI3DSJj=?J>1
-R7
-31
+VR@B1QBE@612hH0jaNJDNi0
 R8
-!i10b 1
+31
 R9
 R10
 R11
-!i113 1
 R12
 R13
-Efreq2steps_tb
-Z14 w1523817119
-R2
-R3
-R4
-R0
-Z15 8../src/Freq2Steps_tb.vhd
-Z16 F../src/Freq2Steps_tb.vhd
-l0
-L9
-V[42eM=Ag=2C?HORYSaah20
-!s100 oHCP3afVcGfRB2:LOj2fC2
-R7
-31
-R8
+!s100 BoGNJV1f1mz;F26IfiYIP2
 !i10b 1
-R9
-Z17 !s90 -reportprogress|300|-93|-work|work|../src/Freq2Steps_tb.vhd|
-Z18 !s107 ../src/Freq2Steps_tb.vhd|
-!i113 1
-R12
-R13
-Aarch
-R2
-R3
-R4
-DEx4 work 13 freq2steps_tb 0 22 [42eM=Ag=2C?HORYSaah20
-l28
-L12
-VE5TY9zfz0:GkjemDlI@1n2
-!s100 a2Lez:@gZ6[[n:hj9ZEjd2
-R7
-31
-R8
-!i10b 1
-R9
-R17
-R18
-!i113 1
-R12
-R13
 Efreq2stepsmult
-Z19 w1523814148
+R1
 R3
 R4
-Z20 dS:/EEET-461/Drum_Synth/source/IP/FM_Mod/SineRom/sim/script
-Z21 8../../../Freq2Steps/Freq2StepsMult.vhd
-Z22 F../../../Freq2Steps/Freq2StepsMult.vhd
+R5
+Z14 8../../../Freq2Steps/Freq2StepsMult.vhd
+Z15 F../../../Freq2Steps/Freq2StepsMult.vhd
 l0
 L43
-VE>kY776U5F6dCkC[YzGI10
-!s100 nb<BQB51BZf2bIdZd2nRg3
-R7
+V?Pce^bk;WZU7VAn9N:E9@0
+R8
 31
-Z23 !s110 1523820484
-!i10b 1
-Z24 !s108 1523820483.000000
-Z25 !s90 -reportprogress|300|-93|-work|work|../../../Freq2Steps/Freq2StepsMult.vhd|
-Z26 !s107 ../../../Freq2Steps/Freq2StepsMult.vhd|
-!i113 1
+Z16 !s108 1524542566.888000
+Z17 !s90 -reportprogress|300|-93|-work|work|../../../Freq2Steps/Freq2StepsMult.vhd|
+Z18 !s107 ../../../Freq2Steps/Freq2StepsMult.vhd|
 R12
 R13
+!s100 B]R32ThSciIUhhTT85^YI2
+!i10b 1
 Asyn
 R3
 R4
-DEx4 work 14 freq2stepsmult 0 22 E>kY776U5F6dCkC[YzGI10
+DEx4 work 14 freq2stepsmult 0 22 ?Pce^bk;WZU7VAn9N:E9@0
 l79
 L53
-V3O[G>9LNn38V6m?NUKn0P3
-!s100 Af[RAa6>zX?gNH9V:K6970
-R7
+VOh]NFaglTeCHJ^GO0dVLZ3
+!s100 :lQ[nQo@Lk[VOh3G8iHO53
+R8
 31
-R23
-!i10b 1
-R24
-R25
-R26
-!i113 1
+R16
+R17
+R18
 R12
 R13
+!i10b 1
 Esinerom
-Z27 w1523819855
+Z19 w1524534492
 R2
 R3
 R4
-R20
-Z28 8../../SineRom.vhd
-Z29 F../../SineRom.vhd
+R5
+Z20 8../../SineRom.vhd
+Z21 F../../SineRom.vhd
 l0
 L5
-VCe9^ghB0UCC8PWLe4740T3
-!s100 O@gAWGidl:A?aTTKocgg90
-R7
+Vlh^>0NlDE[K[5z6OIzScA1
+R8
 31
-Z30 !s110 1523820483
-!i10b 1
-R24
-Z31 !s90 -reportprogress|300|-93|-work|work|../../SineRom.vhd|
-Z32 !s107 ../../SineRom.vhd|
-!i113 1
+Z22 !s108 1524542566.380000
+Z23 !s90 -reportprogress|300|-93|-work|work|../../SineRom.vhd|
+Z24 !s107 ../../SineRom.vhd|
 R12
 R13
+!s100 2>l?PP4<9hNzZ>hcaATY`1
+!i10b 1
 Artl
 R2
 R3
 R4
-DEx4 work 7 sinerom 0 22 Ce9^ghB0UCC8PWLe4740T3
+DEx4 work 7 sinerom 0 22 lh^>0NlDE[K[5z6OIzScA1
 l39
 L16
-Vofb<cb<OX8DQ:Kg^TJ9MA1
-!s100 HYgI2QUWF]:mV1gATV`[[3
-R7
+Vi;CJCc;D1AmB?a>cY>d]W0
+R8
 31
-R30
-!i10b 1
+R22
+R23
 R24
-R31
-R32
-!i113 1
 R12
 R13
+!s100 Y1PdTA0EkG<HYo<9kYRdC2
+!i10b 1
 Esinerom_tb
-Z33 w1523820037
+Z25 w1524542556
 R2
 R3
 R4
-R20
-Z34 8../src/SineRom_tb.vhd
-Z35 F../src/SineRom_tb.vhd
+R5
+Z26 8../src/SineRom_tb.vhd
+Z27 F../src/SineRom_tb.vhd
 l0
 L9
-VZ0PB0c5JCJ0A]aXBS9M@a3
-!s100 JPMLzPgMCFSW3n>bW5;_N1
-R7
+VIHXLk;XH8KgkXh^ZBR94z2
+!s100 OLBTcMYDF:P?;Zff9CNL_1
+R8
 31
-R23
 !i10b 1
-Z36 !s108 1523820484.000000
-Z37 !s90 -reportprogress|300|-93|-work|work|../src/SineRom_tb.vhd|
-Z38 !s107 ../src/SineRom_tb.vhd|
-!i113 1
+Z28 !s108 1524542567.048000
+Z29 !s90 -reportprogress|300|-93|-work|work|../src/SineRom_tb.vhd|
+Z30 !s107 ../src/SineRom_tb.vhd|
 R12
 R13
 Aarch
 R2
 R3
 R4
-Z39 DEx4 work 10 sinerom_tb 0 22 Z0PB0c5JCJ0A]aXBS9M@a3
+Z31 DEx4 work 10 sinerom_tb 0 22 IHXLk;XH8KgkXh^ZBR94z2
 l33
 L12
-Z40 V2`GNh[m934Llg;SZV?48@2
-Z41 !s100 F?aX80UGhlUTK;37M1Cn70
-R7
+VXUZC7c2=RH[YOF0nLXVIc0
+!s100 B4R^i@?HhVRAOFWeWPZZ62
+R8
 31
-R23
 !i10b 1
-R36
-R37
-R38
-!i113 1
+R28
+R29
+R30
 R12
 R13
 Esinerommem
-Z42 w1523820464
-Z43 DPx9 altera_mf 20 altera_mf_components 0 22 T4<z`h6BL:_nTXI;4TFDa0
+R1
+Z32 DPx9 altera_mf 20 altera_mf_components 0 22 dN>@>Mze:JEj3f_7zNO2S2
 R3
 R4
-R20
-Z44 8../../SineRomMem.vhd
-Z45 F../../SineRomMem.vhd
+R5
+Z33 8../../SineRomMem.vhd
+Z34 F../../SineRomMem.vhd
 l0
 L43
-VRf]0abGFcZ18>XVHXkBX52
-!s100 4AaE3FZdfm^D8E245lO`k2
-R7
+VgeZ2ji^1YS[OWCLOXNajm1
+R8
 31
-R30
-!i10b 1
-R24
-Z46 !s90 -reportprogress|300|-93|-work|work|../../SineRomMem.vhd|
-Z47 !s107 ../../SineRomMem.vhd|
-!i113 1
+Z35 !s108 1524542566.581000
+Z36 !s90 -reportprogress|300|-93|-work|work|../../SineRomMem.vhd|
+Z37 !s107 ../../SineRomMem.vhd|
 R12
 R13
+!s100 W6TP`E<h9mRickN3TAdgS2
+!i10b 1
 Asyn
-R43
+R32
 R3
 R4
-DEx4 work 10 sinerommem 0 22 Rf]0abGFcZ18>XVHXkBX52
+DEx4 work 10 sinerommem 0 22 geZ2ji^1YS[OWCLOXNajm1
 l57
 L53
-VY:RlS`mz3IUfcQWPh^YZb2
-!s100 g0zT<Qz9F3537cf^YbXTN2
-R7
+VTh6<Qe53n5U<W;XWP2U9X0
+R8
 31
-R30
-!i10b 1
-R24
-R46
-R47
-!i113 1
+R35
+R36
+R37
 R12
 R13
+!s100 nDo;8`iWb56YRXNKNV?032
+!i10b 1

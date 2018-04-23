@@ -99,7 +99,7 @@ SineRom_inst : SineRom Port Map
   Dat_Req        => Data_Req,
   i_Frequency    => Pitch,
   Modulation_Dat => Modulation_Dat,
-  SineOut        => audio2ADSR
+  SineOut        => Audio_out
 );
 
 ADSR_inst : ADSR port map
@@ -115,8 +115,8 @@ Dec_D     => Dec_D,
 Sus_D     => Sus_D,
 Rel_M     => Rel_M,
 Rel_D     => Rel_D,
-Audio_in  => audio2ADSR,
-Audio_out => Audio_out
+Audio_in  => audio2ADSR
+--Audio_out => Audio_out
 );
 
 end architecture rtl;

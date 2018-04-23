@@ -25,12 +25,12 @@ component Freq2Steps is
 end component Freq2Steps;
 
 component SineRomMem IS
-	PORT
-	(
-		address		: IN STD_LOGIC_VECTOR (11 DOWNTO 0);
-		clock		: IN STD_LOGIC  := '1';
-		q		    : OUT STD_LOGIC_VECTOR (15 DOWNTO 0)
-	);
+  PORT
+  (
+    address    : IN STD_LOGIC_VECTOR (11 DOWNTO 0);
+    clock    : IN STD_LOGIC  := '1';
+    q        : OUT STD_LOGIC_VECTOR (15 DOWNTO 0)
+  );
 END component SineRomMem;
 
 signal CurrentCount,Pitch :std_logic_vector(15 downto 0);
@@ -48,7 +48,7 @@ begin
     FreqCounterProc:process(clk,reset_n,Dat_Req,Pitch)
     begin
         if(clk='1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 CurrentCount <= (others=>'0');
             elsif(Dat_Req = '1') then
                 CurrentCount <= std_logic_vector(unsigned(CurrentCount) + unsigned(Pitch));
@@ -61,7 +61,7 @@ begin
     PhaseCalc:process(clk,reset_n,CurrentCount,Modulation_Dat)
     begin
         if(clk='1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Phase <= (others=>'0');
             else
                 Phase <= std_logic_vector(unsigned(CurrentCount(11 downto 0)) + unsigned(Modulation_Dat(15 downto 4)));
@@ -70,8 +70,8 @@ begin
     end process;
         
     SineRomMem_inst : SineRomMem PORT MAP (
-		address	 => Phase,
-		clock	 => clk,
-		q	 => SineOut
-	); 
+    address   => Phase,
+    clock   => clk,
+    q   => SineOut
+  ); 
 end architecture rtl;

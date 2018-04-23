@@ -23,11 +23,11 @@ component SineRom IS
 end component SineRom;
 
 constant period           : time := 20ns;
-constant SamplePeriod     : time := 21ms;                                            
+constant SamplePeriod     : time := 1us;
 signal clk                : std_logic := '0';
 signal reset              : std_logic := '0';
 signal Dat_Req_tb         : std_logic := '0';
-signal i_Frequency_tb     : std_logic_vector(15 downto 0) := X"2710";
+signal i_Frequency_tb     : std_logic_vector(15 downto 0) := X"03e8";
 signal Modulation_Dat_tb  : std_logic_vector(15 downto 0) := (OTHERS => '0');
 
 begin
@@ -40,6 +40,8 @@ Test_Cases : process
 -- sample clock process
 clock: process
   begin
+    Dat_Req_tb <= not Dat_Req_tb;
+    wait for period;
     Dat_Req_tb <= not Dat_Req_tb;
     wait for SamplePeriod/2;
 end process; 
