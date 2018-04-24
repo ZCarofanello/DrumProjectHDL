@@ -1,0 +1,208 @@
+# do sim.do
+# Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 14:09:16 on Apr 24,2018
+# vcom -reportprogress 300 -93 -work work ../../FM_Mod.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity FM_Mod
+# -- Compiling architecture rtl of FM_Mod
+# End time: 14:09:17 on Apr 24,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 14:09:17 on Apr 24,2018
+# vcom -reportprogress 300 -93 -work work ../../Freq2Steps/Freq2Steps.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity Freq2Steps
+# -- Compiling architecture rtl of Freq2Steps
+# End time: 14:09:17 on Apr 24,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 14:09:17 on Apr 24,2018
+# vcom -reportprogress 300 -93 -work work ../../Freq2Steps/Freq2StepsMult.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity Freq2StepsMult
+# -- Compiling architecture SYN of freq2stepsmult
+# End time: 14:09:17 on Apr 24,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 14:09:17 on Apr 24,2018
+# vcom -reportprogress 300 -93 -work work ../../SineRom/SineRom.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity SineRom
+# -- Compiling architecture rtl of SineRom
+# End time: 14:09:17 on Apr 24,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 14:09:17 on Apr 24,2018
+# vcom -reportprogress 300 -93 -work work ../../SineRom/SineRomMem.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package altera_mf_components
+# -- Compiling entity SineRomMem
+# -- Compiling architecture SYN of sinerommem
+# End time: 14:09:17 on Apr 24,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 14:09:17 on Apr 24,2018
+# vcom -reportprogress 300 -93 -work work ../../../ADSR/ADSR.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_SIGNED
+# -- Compiling entity ADSR
+# -- Compiling architecture rtl of ADSR
+# End time: 14:09:17 on Apr 24,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 14:09:17 on Apr 24,2018
+# vcom -reportprogress 300 -93 -work work ../../../ADSR/FSM_ADSR.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity FSM_ADSR
+# -- Compiling architecture Behave of FSM_ADSR
+# End time: 14:09:18 on Apr 24,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 14:09:18 on Apr 24,2018
+# vcom -reportprogress 300 -93 -work work ../../../ADSR/Generic_Counter.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Compiling entity generic_counter
+# -- Compiling architecture beh of generic_counter
+# End time: 14:09:18 on Apr 24,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 14:09:18 on Apr 24,2018
+# vcom -reportprogress 300 -93 -work work ../../../ADSR/mult.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mult
+# -- Compiling architecture SYN of mult
+# End time: 14:09:18 on Apr 24,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 14:09:18 on Apr 24,2018
+# vcom -reportprogress 300 -93 -work work ../src/FM_Mod_tb.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity FM_Mod_tb
+# -- Compiling architecture arch of FM_Mod_tb
+# ** Warning: ../src/FM_Mod_tb.vhd(37): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: ../src/FM_Mod_tb.vhd(38): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# End time: 14:09:18 on Apr 24,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+# vsim -novopt FM_Mod_tb 
+# Start time: 14:09:18 on Apr 24,2018
+# //  ModelSim DE-64 10.6c Jul 26 2017
+# //
+# //  Copyright 1991-2017 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim DE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.fm_mod_tb(arch)
+# Loading work.fm_mod(rtl)
+# Loading work.sinerom(rtl)
+# Loading work.freq2steps(rtl)
+# Loading work.freq2stepsmult(syn)
+# Loading ieee.std_logic_arith(body)
+# Loading lpm.lpm_components
+# Loading lpm.lpm_hint_evaluation(body)
+# Loading lpm.lpm_mult(lpm_syn)
+# Loading altera_mf.altera_mf_components
+# Loading work.sinerommem(syn)
+# Loading ieee.std_logic_unsigned(body)
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)
+# Loading ieee.std_logic_signed(body)
+# Loading work.adsr(rtl)
+# Loading work.fsm_adsr(behave)
+# Loading work.mult(syn)
+# Loading work.generic_counter(beh)
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: zxc5408  Hostname: ECTET-1360-07  ProcessID: 10900
+#           Attempting to use alternate WLF file "./wlftt51xx8".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftt51xx8
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /fm_mod_tb/uut/ADSR_inst/mult_inst/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /fm_mod_tb/uut/ADSR_inst/mult_inst/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /fm_mod_tb/uut/ADSR_inst/mult_inst/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /fm_mod_tb/uut/SineRom_inst/Freq2Steps_inst/Freq2StepsMult_inst/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /fm_mod_tb/uut/SineRom_inst/Freq2Steps_inst/Freq2StepsMult_inst/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /fm_mod_tb/uut/SineRom_inst/Freq2Steps_inst/Freq2StepsMult_inst/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /fm_mod_tb/uut/SineRom_inst/Freq2Steps_inst/Freq2StepsMult_inst/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /fm_mod_tb/uut/SineRom_inst/Freq2Steps_inst/Freq2StepsMult_inst/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /fm_mod_tb/uut/ADSR_inst/mult_inst/lpm_mult_component
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 2  Instance: /fm_mod_tb/uut/ADSR_inst/mult_inst/lpm_mult_component
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# End time: 14:11:13 on Apr 24,2018, Elapsed time: 0:01:55
+# Errors: 0, Warnings: 22

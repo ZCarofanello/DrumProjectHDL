@@ -84,13 +84,13 @@ BEGIN
 	
 	change_state <= change_state_int;
         
-    ZeCloud:PROCESS(current_state_int, data_req, timer_sig, trig_sig) is
+    ZeCloud:PROCESS(current_state_int, next_state, data_req, timer_sig, trig_sig) is
     BEGIN
         CASE (current_state_int) is
             WHEN reset_s =>
                 next_state <= ready_s;
             WHEN ready_s =>
-        if(data_req = '1' and trig_sig = '1') then
+        if(trig_sig = '1') then
           next_state <= attack_s;
         end if;
         next_state <= ready_s;
@@ -105,7 +105,7 @@ BEGIN
         end if;
                 next_state <= decay_s;
             WHEN sustain_s =>
-          if(timer_sig = '1') then
+          if(trig_sig = '1') then
           next_state <= release_s;
         end if;
                 next_state <= sustain_s;

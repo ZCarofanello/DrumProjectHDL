@@ -104,17 +104,21 @@ current_state => state
 );
 
 
-duration_proc: process(Att_D,Dec_D,Sus_D,Rel_D)
+duration_proc: process(reset_n, clk,Att_D,Dec_D,Sus_D,Rel_D)
 begin
-	case state is
-		when "00000" => Max_Cnt_int <= (others => '0');
-		when "00001" => Max_Cnt_int <= (others => '0');
-		when "00010" => Max_Cnt_int <= Att_D;
-		when "00100" => Max_Cnt_int <= Dec_D;
-		when "01000" => Max_Cnt_int <= Sus_D;
-		when "10000" => Max_Cnt_int <= Rel_D;
-		when others  => Max_Cnt_int <= (others => '0');
-	end case;
+    IF(reset_n = '0') THEN
+        current_Slope_int <= (others => '0');
+    ELSIF(clk'EVENT AND clk = '1') THEN
+		case state is
+			when "00000" => Max_Cnt_int <= (others => '1');
+			when "00001" => Max_Cnt_int <= (others => '0');
+			when "00010" => Max_Cnt_int <= Att_D;
+			when "00100" => Max_Cnt_int <= Dec_D;
+			when "01000" => Max_Cnt_int <= Sus_D;
+			when "10000" => Max_Cnt_int <= Rel_D;
+			when others  => Max_Cnt_int <= (others => '0');
+		end case;
+	end if;
 end process;
 
 slope_proc: process(Att_M,Dec_M,Rel_M)
