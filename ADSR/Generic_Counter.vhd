@@ -67,7 +67,7 @@ begin
         output <= '0';
      elsif (clk'event and clk = '1') then
         output <= '0';
-        if (count_sig = max_count) then
+        if (count_sig >= max_count) then
            output <= '1';
         else
            output <= '0';

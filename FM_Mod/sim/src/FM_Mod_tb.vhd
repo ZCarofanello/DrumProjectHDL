@@ -35,20 +35,20 @@ component FM_Mod IS
 end component FM_Mod;
 
 constant period           : time := 20ns;
-constant SamplePeriod     : time := 1us;
-constant trigger_tb          : std_logic := '1';
+constant SamplePeriod     : time := 500ns;
+signal trigger_tb          : std_logic := '0';
 signal clk                : std_logic := '0';
 signal reset              : std_logic := '0';
 signal Dat_Req_tb         : std_logic := '0';
 signal i_Frequency_tb     : std_logic_vector(15 downto 0) := X"03E8";
 signal Modulation_Dat_tb  : std_logic_vector(15 downto 0) := (OTHERS => '0');
-signal Att_M_tb           : std_logic_vector(15 downto 0) := (others => '0');
-signal Att_D_tb           : std_logic_vector(15 downto 0) := (others => '0');
-signal Dec_M_tb           : std_logic_vector(15 downto 0) := (others => '0');
-signal Dec_D_tb           : std_logic_vector(15 downto 0) := (others => '0');
-signal Sus_D_tb           : std_logic_vector(15 downto 0) := (others => '0');
-signal Rel_M_tb           : std_logic_vector(15 downto 0) := (others => '0');
-signal Rel_D_tb           : std_logic_vector(15 downto 0) := (others => '0');
+signal Att_M_tb           : std_logic_vector(15 downto 0) := X"0008";
+signal Att_D_tb           : std_logic_vector(15 downto 0) := X"00FF";
+signal Dec_M_tb           : std_logic_vector(15 downto 0) := X"0005";
+signal Dec_D_tb           : std_logic_vector(15 downto 0) := X"00F0";
+signal Sus_D_tb           : std_logic_vector(15 downto 0) := X"0150";
+signal Rel_M_tb           : std_logic_vector(15 downto 0) := X"0005";
+signal Rel_D_tb           : std_logic_vector(15 downto 0) := X"008E";
 
 begin
 -- bcd iteration
@@ -58,7 +58,7 @@ Test_Cases : process
   end process; 
 
 -- sample clock process
-clock: process
+Sampleclock: process
   begin
     Dat_Req_tb <= not Dat_Req_tb;
     wait for period;
@@ -67,7 +67,7 @@ clock: process
 end process; 
 
 -- clock process
-Sampleclock: process
+clock: process
   begin
     clk <= not clk;
     wait for period/2;
@@ -79,7 +79,14 @@ async_reset: process
     wait for 2 * period;
     reset <= '1';
     wait;
-end process; 
+end process;
+
+-- trigger process
+trigger_proc: process
+  begin
+    trigger_tb <= not trigger_tb;
+    wait for 500us;
+end process;  
 
 uut: FM_Mod  
   port map(  

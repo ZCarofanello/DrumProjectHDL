@@ -39,12 +39,12 @@ signal clk                : std_logic := '0';
 signal reset              : std_logic := '0';
 signal Dat_Req_tb         : std_logic := '0';
 signal audio_in_tb        : std_logic_vector(15 downto 0) := X"0150";
-signal Att_M_tb           : std_logic_vector(15 downto 0) := X"0001";
-signal Att_D_tb           : std_logic_vector(15 downto 0) := X"0010";
-signal Dec_M_tb           : std_logic_vector(15 downto 0) := X"FFFF";
+signal Att_M_tb           : std_logic_vector(15 downto 0) := X"00FF";
+signal Att_D_tb           : std_logic_vector(15 downto 0) := X"0020";
+signal Dec_M_tb           : std_logic_vector(15 downto 0) := X"0005";
 signal Dec_D_tb           : std_logic_vector(15 downto 0) := X"0003";
 signal Sus_D_tb           : std_logic_vector(15 downto 0) := X"0150";
-signal Rel_M_tb           : std_logic_vector(15 downto 0) := X"FFF9";
+signal Rel_M_tb           : std_logic_vector(15 downto 0) := X"000f";
 signal Rel_D_tb           : std_logic_vector(15 downto 0) := X"0010";
 
 begin
@@ -74,7 +74,7 @@ end process;
 trigger_proc: process
   begin
     trigger_tb <= not trigger_tb;
-    wait for 3us;
+    wait for 10us;
 end process; 
  
 -- reset process

@@ -30,7 +30,7 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
-use ieee.std_logic_signed.all;
+use ieee.std_logic_unsigned.all;
 
 ENTITY ADSR is
     PORT(
@@ -113,7 +113,7 @@ begin
 			when "00100" => Max_Cnt_int <= Dec_D;
 			when "01000" => Max_Cnt_int <= Sus_D;
 			when "10000" => Max_Cnt_int <= Rel_D;
-			when others  => Max_Cnt_int <= (others => '0');
+			when others  => Max_Cnt_int <= (others => '1');
 		end case;
 end process;
 
@@ -135,25 +135,40 @@ begin
     IF(reset_n = '0') THEN
         current_slope_int <= (others => '0');
     ELSIF(clk'EVENT AND clk = '1') THEN
-        if(state(0) = '1') then
-            current_slope_int <= (others => '0');
-		elsif(data_req = '1') then
-			if((current_slope_int + current_slope_inc) = 0) then
-				current_slope_int <= (others => '0');
-			else
-				current_slope_int <= current_slope_int + current_slope_inc;
-			end if;
-		end if;
+		case state is
+			when "00000" => current_slope_int <= (others => '0');
+			when "00001" => current_slope_int <= (others => '0');
+			when "00010" => 
+				if((current_slope_int + current_slope_inc) >= X"7FF0") then
+					current_slope_int <= (others => '1');
+				else
+					current_slope_int <= current_slope_int + current_slope_inc;
+				end if;
+			when "00100" => 
+			    if((current_slope_int - current_slope_inc) <= X"0000") then
+					current_slope_int <= (others => '0');
+				else
+					current_slope_int <= current_slope_int - current_slope_inc;
+				end if;
+			when "01000" => current_slope_int <= current_slope_int;
+			when "10000" =>
+				if((current_slope_int - current_slope_inc) <= X"0000") then
+					current_slope_int <= (others => '0');
+				else
+					current_slope_int <= current_slope_int - current_slope_inc;
+				end if;
+			when others  => current_slope_int <= (others => '0');
+		end case;
     END IF;
 end process;
 
 mult_inst:mult
 port map(
 dataa  => Audio_in,
-datab  => current_Slope_int,
+datab  => current_slope_int,
 result => audio_mult_out_full
 );
-audio_mult_out <= audio_mult_out_full(15 downto 0);
+audio_mult_out <= audio_mult_out_full(31 downto 16);
 
 CounterReset <= reset_n ;
 counter_inst: generic_counter
