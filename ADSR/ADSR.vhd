@@ -106,22 +106,18 @@ current_state => state
 
 duration_proc: process(reset_n, clk,Att_D,Dec_D,Sus_D,Rel_D)
 begin
-    IF(reset_n = '0') THEN
-        current_Slope_int <= (others => '0');
-    ELSIF(clk'EVENT AND clk = '1') THEN
 		case state is
 			when "00000" => Max_Cnt_int <= (others => '1');
-			when "00001" => Max_Cnt_int <= (others => '0');
+			when "00001" => Max_Cnt_int <= (others => '1');
 			when "00010" => Max_Cnt_int <= Att_D;
 			when "00100" => Max_Cnt_int <= Dec_D;
 			when "01000" => Max_Cnt_int <= Sus_D;
 			when "10000" => Max_Cnt_int <= Rel_D;
 			when others  => Max_Cnt_int <= (others => '0');
 		end case;
-	end if;
 end process;
 
-slope_proc: process(Att_M,Dec_M,Rel_M)
+slope_proc: process(current_slope_inc, state, Att_M,Dec_M,Rel_M)
 begin
 	case state is
 		when "00000" => current_slope_inc <= (others => '0');
@@ -134,16 +130,18 @@ begin
 	end case;
 end process;
 	
-slope_calc_proc: process(clk, reset_n, Att_M,Dec_M,Rel_M,current_Slope_int)
+slope_calc_proc: process(clk, reset_n,data_req, current_slope_inc,current_slope_int)
 begin
     IF(reset_n = '0') THEN
-        current_Slope_int <= (others => '0');
+        current_slope_int <= (others => '0');
     ELSIF(clk'EVENT AND clk = '1') THEN
-		if(data_req = '1') then
-			if(unsigned(current_Slope_int) = 0) then
+        if(state(0) = '1') then
+            current_slope_int <= (others => '0');
+		elsif(data_req = '1') then
+			if((current_slope_int + current_slope_inc) = 0) then
 				current_slope_int <= (others => '0');
 			else
-				current_slope_int <= std_logic_vector(unsigned(current_slope_int) + unsigned(current_slope_inc));
+				current_slope_int <= current_slope_int + current_slope_inc;
 			end if;
 		end if;
     END IF;
@@ -157,7 +155,7 @@ result => audio_mult_out_full
 );
 audio_mult_out <= audio_mult_out_full(15 downto 0);
 
-CounterReset <= reset_n or (not change_state);
+CounterReset <= reset_n ;
 counter_inst: generic_counter
 port map(
 clk         => clk,

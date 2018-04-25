@@ -45,21 +45,35 @@ end generic_counter;
 architecture beh of generic_counter  is
 
 signal count_sig    : std_logic_vector(15 downto 0):= (others => '0');
+signal output_int   :std_logic:='0';
 
 begin
 process(clk,reset_n)
   begin
     if (reset_n = '0') then 
       count_sig <= (others => '0');
-      output <= '0';
     elsif (clk'event and clk = '1') then
-      if (count_sig >= max_count) then
-        count_sig <= (others => '0');
-        output <= '1';
-      else
-        count_sig <= std_logic_vector(unsigned(count_sig) + 1);
-        output <= '0';
-      end if; 
+        if (count_sig = max_count) then
+            count_sig <= (others => '0');
+        elsif(enable = '1') then
+            count_sig <= count_sig + 1;
+        end if; 
     end if;
   end process;
+
+output_proc:process(clk,reset_n,count_sig,max_count,output_int)
+begin
+     if (reset_n = '0') then 
+        output <= '0';
+     elsif (clk'event and clk = '1') then
+        output <= '0';
+        if (count_sig = max_count) then
+           output <= '1';
+        else
+           output <= '0';
+        end if;
+    end if;
+end process;
+--output <= output_int;
+
 end beh;

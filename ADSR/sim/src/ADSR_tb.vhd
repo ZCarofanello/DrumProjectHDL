@@ -39,13 +39,13 @@ signal clk                : std_logic := '0';
 signal reset              : std_logic := '0';
 signal Dat_Req_tb         : std_logic := '0';
 signal audio_in_tb        : std_logic_vector(15 downto 0) := X"0150";
-signal Att_M_tb           : std_logic_vector(15 downto 0) := X"00FF";
+signal Att_M_tb           : std_logic_vector(15 downto 0) := X"0001";
 signal Att_D_tb           : std_logic_vector(15 downto 0) := X"0010";
-signal Dec_M_tb           : std_logic_vector(15 downto 0) := X"80ff";
-signal Dec_D_tb           : std_logic_vector(15 downto 0) := X"0008";
+signal Dec_M_tb           : std_logic_vector(15 downto 0) := X"FFFF";
+signal Dec_D_tb           : std_logic_vector(15 downto 0) := X"0003";
 signal Sus_D_tb           : std_logic_vector(15 downto 0) := X"0150";
-signal Rel_M_tb           : std_logic_vector(15 downto 0) := X"80FF";
-signal Rel_D_tb           : std_logic_vector(15 downto 0) := X"0150";
+signal Rel_M_tb           : std_logic_vector(15 downto 0) := X"FFF9";
+signal Rel_D_tb           : std_logic_vector(15 downto 0) := X"0010";
 
 begin
 -- bcd iteration

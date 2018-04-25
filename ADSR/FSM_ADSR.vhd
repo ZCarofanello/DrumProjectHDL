@@ -29,7 +29,6 @@
 --***************************************************************************
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
-USE ieee.numeric_std.ALL;
 
 ENTITY FSM_ADSR is
     PORT(
@@ -90,30 +89,35 @@ BEGIN
             WHEN reset_s =>
                 next_state <= ready_s;
             WHEN ready_s =>
-        if(trig_sig = '1') then
-          next_state <= attack_s;
-        end if;
-        next_state <= ready_s;
+                if(trig_sig = '1') then
+                    next_state <= attack_s;
+                else
+                    next_state <= ready_s;
+                end if;
             WHEN attack_s =>
           if(timer_sig = '1') then
           next_state <= decay_s;
-        end if;
+          else
                 next_state <= attack_s;
+          end if;
             WHEN decay_s =>
           if(timer_sig = '1') then
           next_state <= sustain_s;
-        end if;
+          else
                 next_state <= decay_s;
+          end if;
             WHEN sustain_s =>
-          if(trig_sig = '1') then
+          if(trig_sig = '0') then
           next_state <= release_s;
-        end if;
+          else
                 next_state <= sustain_s;
+          end if;
             WHEN release_s =>
           if(timer_sig = '1') then
           next_state <= ready_s;
-        end if;
+          else
                 next_state <= release_s;
+          end if;
             WHEN OTHERS =>
                 next_state <= reset_s;
         END CASE;
