@@ -10,8 +10,8 @@
 -------------------------------------------------------------------------------
 --
 -- DESCRIPTION
---
---    
+-- This is a simple counter that increments when Enable is high and ouput is 
+-- high when count == max_count
 -- 
 -- 
 --
@@ -24,7 +24,7 @@
 -- |==========+=========+=====+=============+==============================
 -- |          |         |     |             |
 -- | 04/13/18 | ZXC5408 | 1.0 | Created     |
--- |
+-- | 04/25/18 | ZXC5408 | 1.1 | Added Description
 --
 --***************************************************************************
 library ieee;
@@ -53,7 +53,7 @@ process(clk,reset_n)
     if (reset_n = '0') then 
       count_sig <= (others => '0');
     elsif (clk'event and clk = '1') then
-        if (count_sig = max_count) then
+        if (count_sig >= max_count) then
             count_sig <= (others => '0');
         elsif(enable = '1') then
             count_sig <= count_sig + 1;

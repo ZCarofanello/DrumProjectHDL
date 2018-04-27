@@ -10,10 +10,16 @@
 -------------------------------------------------------------------------------
 --
 -- DESCRIPTION
+-- This is an ADSR signal shaping component that takes the input signal and
+-- multiplies it by the current increment of the envelope. The envelope
+-- increments every time a data request is sent.
+-- See link below for more information
+-- https://en.wikipedia.org/wiki/Synthesizer#Attack_Decay_Sustain_Release_(ADSR)_envelope
+-------------------------------------------------------------------------------
 --
---    
--- 
--- 
+-- TO DO
+-- *Add more comments to components and processes
+--
 --
 -------------------------------------------------------------------------------
 --
@@ -24,7 +30,7 @@
 -- |==========+=========+=====+=============+==============================
 -- |          |         |     |             |
 -- | 04/13/18 | ZXC5408 | 1.0 | Created     |
--- |
+-- | 04/25/18 | ZXC5408 | 1.1 | Added description
 --
 --***************************************************************************
 LIBRARY ieee;
@@ -170,7 +176,7 @@ result => audio_mult_out_full
 );
 audio_mult_out <= audio_mult_out_full(31 downto 16);
 
-CounterReset <= reset_n ;
+CounterReset <= reset_n and not change_state;
 counter_inst: generic_counter
 port map(
 clk         => clk,

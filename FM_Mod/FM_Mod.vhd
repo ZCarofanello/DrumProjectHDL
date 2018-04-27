@@ -10,8 +10,8 @@
 -------------------------------------------------------------------------------
 --
 -- DESCRIPTION
---
---    
+-- This is the base operator for the FM Synthesizer. This is mostly just
+-- connecting the ADSR to the sinerom component
 -- 
 -- 
 --

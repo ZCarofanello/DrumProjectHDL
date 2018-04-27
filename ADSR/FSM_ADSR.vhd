@@ -10,21 +10,25 @@
 -------------------------------------------------------------------------------
 --
 -- DESCRIPTION
---
---    
--- 
--- 
+-- This is the FSM for the ADSR component. It looks for the trigger to be
+-- pressed to change from ready to attack and each state progresses with the 
+-- counter signal except for the sustain state which waits for the trigger to 
+-- be released.
 --
 -------------------------------------------------------------------------------
+-- TO DO
+-- *Add more comments to FSM
 --
--- REVisION HisTORY
+--
+-------------------------------------------------------------------------------
+-- REVISION HISTORY
 --
 -- _______________________________________________________________________
 -- |   DATE   |  USER   | Ver | Description |
 -- |==========+=========+=====+=============+==============================
 -- |          |         |     |             |
 -- | 04/13/18 | ZXC5408 | 1.0 | Created     |
--- |
+-- | 04/25/18 | ZXC5408 | 1.1 | Added Documentation
 --
 --***************************************************************************
 LIBRARY ieee;
@@ -52,7 +56,7 @@ constant sustain_s  :std_logic_vector(4 downto 0):= "01000";
 constant release_s  :std_logic_vector(4 downto 0):= "10000";
 
 -- signal declarations
-signal current_state_int  : std_logic_vector(4 downto 0);
+signal current_state_int, current_state_z  : std_logic_vector(4 downto 0);
 signal next_state         : std_logic_vector(4 downto 0);
 signal change_state_int	  : std_logic;
 
@@ -72,9 +76,11 @@ BEGIN
 	begin
 		if(reset_n = '0') then
 			change_state_int <= '1';
+            current_state_z <= reset_s;
 		elsif(clk'event and clk = '0') then
-			if(current_state_int /= next_state) then
+			if(current_state_int /= current_state_z) then
 				change_state_int <= '1';
+                current_state_z <= current_state_int;
 			else 
 				change_state_int <= '0';
 			end if;
