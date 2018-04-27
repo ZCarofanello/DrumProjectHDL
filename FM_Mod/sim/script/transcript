@@ -1,40 +1,62 @@
-# do sim.do 
+# do sim.do
 # ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 17:18:55 on Apr 27,2018
+# vcom -reportprogress 300 -93 -work work ../../FM_Mod.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity FM_Mod
 # -- Compiling architecture rtl of FM_Mod
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# End time: 17:18:55 on Apr 27,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 17:18:55 on Apr 27,2018
+# vcom -reportprogress 300 -93 -work work ../../Freq2Steps/Freq2Steps.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity Freq2Steps
 # -- Compiling architecture rtl of Freq2Steps
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# End time: 17:18:55 on Apr 27,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 17:18:55 on Apr 27,2018
+# vcom -reportprogress 300 -93 -work work ../../Freq2Steps/Freq2StepsMult.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity Freq2StepsMult
 # -- Compiling architecture SYN of freq2stepsmult
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# End time: 17:18:56 on Apr 27,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 17:18:56 on Apr 27,2018
+# vcom -reportprogress 300 -93 -work work ../../SineRom/SineRom.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity SineRom
 # -- Compiling architecture rtl of SineRom
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# End time: 17:18:56 on Apr 27,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 17:18:56 on Apr 27,2018
+# vcom -reportprogress 300 -93 -work work ../../SineRom/SineRomMem.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package altera_mf_components
 # -- Compiling entity SineRomMem
 # -- Compiling architecture SYN of sinerommem
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# End time: 17:18:56 on Apr 27,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 17:18:56 on Apr 27,2018
+# vcom -reportprogress 300 -93 -work work ../../../ADSR/ADSR.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -43,13 +65,21 @@
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Compiling entity ADSR
 # -- Compiling architecture rtl of ADSR
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# End time: 17:18:56 on Apr 27,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 17:18:56 on Apr 27,2018
+# vcom -reportprogress 300 -93 -work work ../../../ADSR/FSM_ADSR.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity FSM_ADSR
 # -- Compiling architecture Behave of FSM_ADSR
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# End time: 17:18:56 on Apr 27,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 17:18:56 on Apr 27,2018
+# vcom -reportprogress 300 -93 -work work ../../../ADSR/Generic_Counter.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -58,23 +88,47 @@
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Compiling entity generic_counter
 # -- Compiling architecture beh of generic_counter
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# End time: 17:18:56 on Apr 27,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 17:18:56 on Apr 27,2018
+# vcom -reportprogress 300 -93 -work work ../../../ADSR/mult.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity mult
 # -- Compiling architecture SYN of mult
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# End time: 17:18:56 on Apr 27,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 17:18:56 on Apr 27,2018
+# vcom -reportprogress 300 -93 -work work ../src/FM_Mod_tb.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity FM_Mod_tb
 # -- Compiling architecture arch of FM_Mod_tb
-# ** Warning: [4] ../src/FM_Mod_tb.vhd(37): (vcom-1207) An abstract literal and an identifier must have a separator between them.
-# ** Warning: [4] ../src/FM_Mod_tb.vhd(38): (vcom-1207) An abstract literal and an identifier must have a separator between them.
-# ** Warning: [4] ../src/FM_Mod_tb.vhd(88): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: ../src/FM_Mod_tb.vhd(37): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: ../src/FM_Mod_tb.vhd(38): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: ../src/FM_Mod_tb.vhd(88): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# End time: 17:18:56 on Apr 27,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 3
 # vsim -novopt FM_Mod_tb 
+# Start time: 17:18:57 on Apr 27,2018
+# //  ModelSim DE-64 10.6c Jul 26 2017
+# //
+# //  Copyright 1991-2017 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim DE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -99,23 +153,22 @@
 # Loading work.mult(syn)
 # Loading work.generic_counter(beh)
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /fm_mod_tb/uut/ADSR_inst/mult_inst/lpm_mult_component
+#    Time: 0 ns  Iteration: 0  Instance: /fm_mod_tb/uut/ADSR_inst/mult_inst/lpm_mult_component
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /fm_mod_tb/uut/ADSR_inst/mult_inst/lpm_mult_component
+#    Time: 0 ns  Iteration: 0  Instance: /fm_mod_tb/uut/ADSR_inst/mult_inst/lpm_mult_component
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /fm_mod_tb/uut/ADSR_inst/mult_inst/lpm_mult_component
+#    Time: 0 ns  Iteration: 0  Instance: /fm_mod_tb/uut/ADSR_inst/mult_inst/lpm_mult_component
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /fm_mod_tb/uut/SineRom_inst/Freq2Steps_inst/Freq2StepsMult_inst/lpm_mult_component
+#    Time: 0 ns  Iteration: 0  Instance: /fm_mod_tb/uut/SineRom_inst/Freq2Steps_inst/Freq2StepsMult_inst/lpm_mult_component
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /fm_mod_tb/uut/SineRom_inst/Freq2Steps_inst/Freq2StepsMult_inst/lpm_mult_component
+#    Time: 0 ns  Iteration: 0  Instance: /fm_mod_tb/uut/SineRom_inst/Freq2Steps_inst/Freq2StepsMult_inst/lpm_mult_component
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /fm_mod_tb/uut/SineRom_inst/Freq2Steps_inst/Freq2StepsMult_inst/lpm_mult_component
+#    Time: 0 ns  Iteration: 0  Instance: /fm_mod_tb/uut/SineRom_inst/Freq2Steps_inst/Freq2StepsMult_inst/lpm_mult_component
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /fm_mod_tb/uut/SineRom_inst/Freq2Steps_inst/Freq2StepsMult_inst/lpm_mult_component
+#    Time: 0 ns  Iteration: 1  Instance: /fm_mod_tb/uut/SineRom_inst/Freq2Steps_inst/Freq2StepsMult_inst/lpm_mult_component
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /fm_mod_tb/uut/SineRom_inst/Freq2Steps_inst/Freq2StepsMult_inst/lpm_mult_component
+#    Time: 0 ns  Iteration: 1  Instance: /fm_mod_tb/uut/SineRom_inst/Freq2Steps_inst/Freq2StepsMult_inst/lpm_mult_component
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 2  Instance: /fm_mod_tb/uut/ADSR_inst/mult_inst/lpm_mult_component
+#    Time: 0 ns  Iteration: 2  Instance: /fm_mod_tb/uut/ADSR_inst/mult_inst/lpm_mult_component
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 2  Instance: /fm_mod_tb/uut/ADSR_inst/mult_inst/lpm_mult_component
-run
+#    Time: 0 ns  Iteration: 2  Instance: /fm_mod_tb/uut/ADSR_inst/mult_inst/lpm_mult_component

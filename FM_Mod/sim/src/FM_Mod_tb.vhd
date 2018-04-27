@@ -42,7 +42,7 @@ signal reset              : std_logic := '0';
 signal Dat_Req_tb         : std_logic := '0';
 signal i_Frequency_tb     : std_logic_vector(15 downto 0) := X"03E8";
 signal Modulation_Dat_tb  : std_logic_vector(15 downto 0) := (OTHERS => '0');
-signal Att_M_tb           : std_logic_vector(15 downto 0) := X"0008";
+signal Att_M_tb           : std_logic_vector(15 downto 0) := X"000A";
 signal Att_D_tb           : std_logic_vector(15 downto 0) := X"00FF";
 signal Dec_M_tb           : std_logic_vector(15 downto 0) := X"0005";
 signal Dec_D_tb           : std_logic_vector(15 downto 0) := X"00F0";

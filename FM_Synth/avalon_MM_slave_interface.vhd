@@ -215,7 +215,7 @@ BEGIN
     Data_Req_proc:process(clk,reset_n,byte_1,Data_Req_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Data_Req_int <= '0';
             else
                 Data_Req_int <= byte_1(CTL_OFFSET)(0);
@@ -228,7 +228,7 @@ BEGIN
     Trigger_proc:process(clk,reset_n,byte_0,Trigger_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Trigger_int <= '0';
             else
                 Trigger_int <= byte_0(CTL_OFFSET)(0);
@@ -241,7 +241,7 @@ BEGIN
     Alg_Select_Proc:process(clk,reset_n,byte_3,byte_2, Alg_Select_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Alg_Select_int <= (others=>'1');
             else
                 Alg_Select_int(7  downto 0) <= byte_2(CTL_OFFSET);
@@ -257,7 +257,7 @@ BEGIN
     Op1_Frequency_Proc:process(clk,reset_n,byte_0,byte_1, Op1_Frequency_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op1_Frequency_int <= (others=>'0');
             else
                 Op1_Frequency_int(7  downto 0) <= byte_0(OP1_OFFSET+FREQ_OFFSET);
@@ -269,7 +269,7 @@ BEGIN
     Op1_Feedback_Proc:process(clk,reset_n,byte_2,byte_3,Op1_Feedback_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op1_Feedback_int <= (others=>'0');
             else
                 Op1_Feedback_int(7  downto 0) <= byte_2(OP1_OFFSET+FBCK_OFFSET);
@@ -281,7 +281,7 @@ BEGIN
     Op1_Att_M_Proc:process(clk,reset_n,byte_0,byte_1,Op1_Att_M_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op1_Att_M_int <= (others=>'0');
             else
                 Op1_Att_M_int(7  downto 0) <= byte_0(OP1_OFFSET+ATT_OFFSET);
@@ -293,7 +293,7 @@ BEGIN
     Op1_Att_D_Proc:process(clk,reset_n,byte_3,byte_2,Op1_Att_D_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op1_Att_D_int <= (others=>'0');
             else
                 Op1_Att_D_int(7  downto 0) <= byte_2(OP1_OFFSET+ATT_OFFSET);
@@ -305,7 +305,7 @@ BEGIN
     Op1_Dec_M_Proc:process(clk,reset_n,byte_0,byte_1,Op1_Dec_M_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op1_Dec_M_int <= (others=>'0');
             else
                 Op1_Dec_M_int(7  downto 0) <= byte_0(OP1_OFFSET+DEC_OFFSET);
@@ -317,7 +317,7 @@ BEGIN
     Op1_Dec_D_Proc:process(clk,reset_n,byte_3,byte_2,Op1_Dec_D_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op1_Dec_D_int <= (others=>'0');
             else
                 Op1_Dec_D_int(7  downto 0) <= byte_2(OP1_OFFSET+DEC_OFFSET);
@@ -329,7 +329,7 @@ BEGIN
     Op1_Sus_D_Proc:process(clk,reset_n,byte_3,byte_2,Op1_Sus_D_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op1_Sus_D_int <= (others=>'0');
             else
                 Op1_Sus_D_int(7  downto 0) <= byte_2(OP1_OFFSET+SUS_OFFSET);
@@ -341,7 +341,7 @@ BEGIN
     Op1_Rel_M_Proc:process(clk,reset_n,byte_0,byte_1,Op1_Rel_M_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op1_Rel_M_int <= (others=>'0');
             else
                 Op1_Rel_M_int(7  downto 0) <= byte_0(OP1_OFFSET+REL_OFFSET);
@@ -353,7 +353,7 @@ BEGIN
     Op1_Rel_D_Proc:process(clk,reset_n,byte_3,byte_2,Op1_Rel_D_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op1_Rel_D_int <= (others=>'0');
             else
                 Op1_Rel_D_int(7  downto 0) <= byte_2(OP1_OFFSET+REL_OFFSET);
@@ -377,7 +377,7 @@ BEGIN
     Op2_Frequency_Proc:process(clk,reset_n,byte_0,byte_1, Op2_Frequency_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op2_Frequency_int <= (others=>'0');
             else
                 Op2_Frequency_int(7  downto 0) <= byte_0(OP2_OFFSET+FREQ_OFFSET);
@@ -389,7 +389,7 @@ BEGIN
     Op2_Feedback_Proc:process(clk,reset_n,byte_2,byte_3,Op2_Feedback_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op2_Feedback_int <= (others=>'0');
             else
                 Op2_Feedback_int(7  downto 0) <= byte_2(OP2_OFFSET+FBCK_OFFSET);
@@ -401,7 +401,7 @@ BEGIN
     Op2_Att_M_Proc:process(clk,reset_n,byte_0,byte_1,Op2_Att_M_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op2_Att_M_int <= (others=>'0');
             else
                 Op2_Att_M_int(7  downto 0) <= byte_0(OP2_OFFSET+ATT_OFFSET);
@@ -413,7 +413,7 @@ BEGIN
     Op2_Att_D_Proc:process(clk,reset_n,byte_3,byte_2,Op2_Att_D_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op2_Att_D_int <= (others=>'0');
             else
                 Op2_Att_D_int(7  downto 0) <= byte_2(OP2_OFFSET+ATT_OFFSET);
@@ -425,7 +425,7 @@ BEGIN
     Op2_Dec_M_Proc:process(clk,reset_n,byte_0,byte_1,Op2_Dec_M_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op2_Dec_M_int <= (others=>'0');
             else
                 Op2_Dec_M_int(7  downto 0) <= byte_0(OP2_OFFSET+DEC_OFFSET);
@@ -437,7 +437,7 @@ BEGIN
     Op2_Dec_D_Proc:process(clk,reset_n,byte_3,byte_2,Op2_Dec_D_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op2_Dec_D_int <= (others=>'0');
             else
                 Op2_Dec_D_int(7  downto 0) <= byte_2(OP2_OFFSET+DEC_OFFSET);
@@ -449,7 +449,7 @@ BEGIN
     Op2_Sus_D_Proc:process(clk,reset_n,byte_3,byte_2,Op2_Sus_D_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op2_Sus_D_int <= (others=>'0');
             else
                 Op2_Sus_D_int(7  downto 0) <= byte_2(OP2_OFFSET+SUS_OFFSET);
@@ -461,7 +461,7 @@ BEGIN
     Op2_Rel_M_Proc:process(clk,reset_n,byte_0,byte_1,Op2_Rel_M_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op2_Rel_M_int <= (others=>'0');
             else
                 Op2_Rel_M_int(7  downto 0) <= byte_0(OP2_OFFSET+REL_OFFSET);
@@ -473,7 +473,7 @@ BEGIN
     Op2_Rel_D_Proc:process(clk,reset_n,byte_3,byte_2,Op2_Rel_D_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op2_Rel_D_int <= (others=>'0');
             else
                 Op2_Rel_D_int(7  downto 0) <= byte_2(OP2_OFFSET+REL_OFFSET);
@@ -497,7 +497,7 @@ BEGIN
     Op3_Frequency_Proc:process(clk,reset_n,byte_0,byte_1, Op3_Frequency_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op3_Frequency_int <= (others=>'0');
             else
                 Op3_Frequency_int(7  downto 0) <= byte_0(OP3_OFFSET+FREQ_OFFSET);
@@ -509,7 +509,7 @@ BEGIN
     Op3_Feedback_Proc:process(clk,reset_n,byte_2,byte_3,Op3_Feedback_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op3_Feedback_int <= (others=>'0');
             else
                 Op3_Feedback_int(7  downto 0) <= byte_2(OP3_OFFSET+FBCK_OFFSET);
@@ -521,7 +521,7 @@ BEGIN
     Op3_Att_M_Proc:process(clk,reset_n,byte_0,byte_1,Op3_Att_M_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op3_Att_M_int <= (others=>'0');
             else
                 Op3_Att_M_int(7  downto 0) <= byte_0(OP3_OFFSET+ATT_OFFSET);
@@ -533,7 +533,7 @@ BEGIN
     Op3_Att_D_Proc:process(clk,reset_n,byte_3,byte_2,Op3_Att_D_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op3_Att_D_int <= (others=>'0');
             else
                 Op3_Att_D_int(7  downto 0) <= byte_2(OP3_OFFSET+ATT_OFFSET);
@@ -545,7 +545,7 @@ BEGIN
     Op3_Dec_M_Proc:process(clk,reset_n,byte_0,byte_1,Op3_Dec_M_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op3_Dec_M_int <= (others=>'0');
             else
                 Op3_Dec_M_int(7  downto 0) <= byte_0(OP3_OFFSET+DEC_OFFSET);
@@ -557,7 +557,7 @@ BEGIN
     Op3_Dec_D_Proc:process(clk,reset_n,byte_3,byte_2,Op3_Dec_D_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op3_Dec_D_int <= (others=>'0');
             else
                 Op3_Dec_D_int(7  downto 0) <= byte_2(OP3_OFFSET+DEC_OFFSET);
@@ -569,7 +569,7 @@ BEGIN
     Op3_Sus_D_Proc:process(clk,reset_n,byte_3,byte_2,Op3_Sus_D_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op3_Sus_D_int <= (others=>'0');
             else
                 Op3_Sus_D_int(7  downto 0) <= byte_2(OP3_OFFSET+SUS_OFFSET);
@@ -581,7 +581,7 @@ BEGIN
     Op3_Rel_M_Proc:process(clk,reset_n,byte_0,byte_1,Op3_Rel_M_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op3_Rel_M_int <= (others=>'0');
             else
                 Op3_Rel_M_int(7  downto 0) <= byte_0(OP3_OFFSET+REL_OFFSET);
@@ -593,7 +593,7 @@ BEGIN
     Op3_Rel_D_Proc:process(clk,reset_n,byte_3,byte_2,Op3_Rel_D_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op3_Rel_D_int <= (others=>'0');
             else
                 Op3_Rel_D_int(7  downto 0) <= byte_2(OP3_OFFSET+REL_OFFSET);
@@ -617,7 +617,7 @@ BEGIN
     Op4_Frequency_Proc:process(clk,reset_n,byte_0,byte_1, Op4_Frequency_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op4_Frequency_int <= (others=>'0');
             else
                 Op4_Frequency_int(7  downto 0) <= byte_0(OP4_OFFSET+FREQ_OFFSET);
@@ -629,7 +629,7 @@ BEGIN
     Op4_Feedback_Proc:process(clk,reset_n,byte_2,byte_3,Op4_Feedback_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op4_Feedback_int <= (others=>'0');
             else
                 Op4_Feedback_int(7  downto 0) <= byte_2(OP4_OFFSET+FBCK_OFFSET);
@@ -641,7 +641,7 @@ BEGIN
     Op4_Att_M_Proc:process(clk,reset_n,byte_0,byte_1,Op4_Att_M_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op4_Att_M_int <= (others=>'0');
             else
                 Op4_Att_M_int(7  downto 0) <= byte_0(OP4_OFFSET+ATT_OFFSET);
@@ -653,7 +653,7 @@ BEGIN
     Op4_Att_D_Proc:process(clk,reset_n,byte_3,byte_2,Op4_Att_D_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op4_Att_D_int <= (others=>'0');
             else
                 Op4_Att_D_int(7  downto 0) <= byte_2(OP4_OFFSET+ATT_OFFSET);
@@ -665,7 +665,7 @@ BEGIN
     Op4_Dec_M_Proc:process(clk,reset_n,byte_0,byte_1,Op4_Dec_M_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op4_Dec_M_int <= (others=>'0');
             else
                 Op4_Dec_M_int(7  downto 0) <= byte_0(OP4_OFFSET+DEC_OFFSET);
@@ -677,7 +677,7 @@ BEGIN
     Op4_Dec_D_Proc:process(clk,reset_n,byte_3,byte_2,Op4_Dec_D_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op4_Dec_D_int <= (others=>'0');
             else
                 Op4_Dec_D_int(7  downto 0) <= byte_2(OP4_OFFSET+DEC_OFFSET);
@@ -689,7 +689,7 @@ BEGIN
     Op4_Sus_D_Proc:process(clk,reset_n,byte_3,byte_2,Op4_Sus_D_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op4_Sus_D_int <= (others=>'0');
             else
                 Op4_Sus_D_int(7  downto 0) <= byte_2(OP4_OFFSET+SUS_OFFSET);
@@ -701,7 +701,7 @@ BEGIN
     Op4_Rel_M_Proc:process(clk,reset_n,byte_0,byte_1,Op4_Rel_M_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op4_Rel_M_int <= (others=>'0');
             else
                 Op4_Rel_M_int(7  downto 0) <= byte_0(OP4_OFFSET+REL_OFFSET);
@@ -713,7 +713,7 @@ BEGIN
     Op4_Rel_D_Proc:process(clk,reset_n,byte_3,byte_2,Op4_Rel_D_int)
     begin
         if(clk = '1' and clk'event) then
-            if(reset_n = '1') then
+            if(reset_n = '0') then
                 Op4_Rel_D_int <= (others=>'0');
             else
                 Op4_Rel_D_int(7  downto 0) <= byte_2(OP4_OFFSET+REL_OFFSET);
