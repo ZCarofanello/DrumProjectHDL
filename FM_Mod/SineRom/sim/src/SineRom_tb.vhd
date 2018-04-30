@@ -27,7 +27,7 @@ constant SamplePeriod     : time := 1us;
 signal clk                : std_logic := '0';
 signal reset              : std_logic := '0';
 signal Dat_Req_tb         : std_logic := '0';
-signal i_Frequency_tb     : std_logic_vector(15 downto 0) := X"03e8";
+signal i_Frequency_tb     : std_logic_vector(15 downto 0) := X"0100";
 signal Modulation_Dat_tb  : std_logic_vector(15 downto 0) := (OTHERS => '0');
 
 begin

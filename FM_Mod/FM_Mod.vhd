@@ -115,8 +115,8 @@ Dec_D     => Dec_D,
 Sus_D     => Sus_D,
 Rel_M     => Rel_M,
 Rel_D     => Rel_D,
-Audio_in  => audio2ADSR,
-Audio_out => Audio_out
+Audio_in  => audio2ADSR
+--Audio_out => Audio_out
 );
-
+Audio_out <= audio2ADSR;
 end architecture rtl;

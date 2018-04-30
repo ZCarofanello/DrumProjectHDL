@@ -1,7 +1,7 @@
 # do sim.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 17:18:55 on Apr 27,2018
+# Start time: 19:24:48 on Apr 27,2018
 # vcom -reportprogress 300 -93 -work work ../../FM_Mod.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -9,10 +9,10 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity FM_Mod
 # -- Compiling architecture rtl of FM_Mod
-# End time: 17:18:55 on Apr 27,2018, Elapsed time: 0:00:00
+# End time: 19:24:48 on Apr 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 17:18:55 on Apr 27,2018
+# Start time: 19:24:48 on Apr 27,2018
 # vcom -reportprogress 300 -93 -work work ../../Freq2Steps/Freq2Steps.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -20,20 +20,20 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity Freq2Steps
 # -- Compiling architecture rtl of Freq2Steps
-# End time: 17:18:55 on Apr 27,2018, Elapsed time: 0:00:00
+# End time: 19:24:48 on Apr 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 17:18:55 on Apr 27,2018
+# Start time: 19:24:48 on Apr 27,2018
 # vcom -reportprogress 300 -93 -work work ../../Freq2Steps/Freq2StepsMult.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity Freq2StepsMult
 # -- Compiling architecture SYN of freq2stepsmult
-# End time: 17:18:56 on Apr 27,2018, Elapsed time: 0:00:01
+# End time: 19:24:48 on Apr 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 17:18:56 on Apr 27,2018
+# Start time: 19:24:48 on Apr 27,2018
 # vcom -reportprogress 300 -93 -work work ../../SineRom/SineRom.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -41,10 +41,10 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity SineRom
 # -- Compiling architecture rtl of SineRom
-# End time: 17:18:56 on Apr 27,2018, Elapsed time: 0:00:00
+# End time: 19:24:49 on Apr 27,2018, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 17:18:56 on Apr 27,2018
+# Start time: 19:24:49 on Apr 27,2018
 # vcom -reportprogress 300 -93 -work work ../../SineRom/SineRomMem.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -52,10 +52,10 @@
 # -- Loading package altera_mf_components
 # -- Compiling entity SineRomMem
 # -- Compiling architecture SYN of sinerommem
-# End time: 17:18:56 on Apr 27,2018, Elapsed time: 0:00:00
+# End time: 19:24:49 on Apr 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 17:18:56 on Apr 27,2018
+# Start time: 19:24:49 on Apr 27,2018
 # vcom -reportprogress 300 -93 -work work ../../../ADSR/ADSR.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -65,20 +65,20 @@
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Compiling entity ADSR
 # -- Compiling architecture rtl of ADSR
-# End time: 17:18:56 on Apr 27,2018, Elapsed time: 0:00:00
+# End time: 19:24:49 on Apr 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 17:18:56 on Apr 27,2018
+# Start time: 19:24:49 on Apr 27,2018
 # vcom -reportprogress 300 -93 -work work ../../../ADSR/FSM_ADSR.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity FSM_ADSR
 # -- Compiling architecture Behave of FSM_ADSR
-# End time: 17:18:56 on Apr 27,2018, Elapsed time: 0:00:00
+# End time: 19:24:49 on Apr 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 17:18:56 on Apr 27,2018
+# Start time: 19:24:49 on Apr 27,2018
 # vcom -reportprogress 300 -93 -work work ../../../ADSR/Generic_Counter.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -88,20 +88,20 @@
 # -- Loading package STD_LOGIC_UNSIGNED
 # -- Compiling entity generic_counter
 # -- Compiling architecture beh of generic_counter
-# End time: 17:18:56 on Apr 27,2018, Elapsed time: 0:00:00
+# End time: 19:24:49 on Apr 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 17:18:56 on Apr 27,2018
+# Start time: 19:24:49 on Apr 27,2018
 # vcom -reportprogress 300 -93 -work work ../../../ADSR/mult.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity mult
 # -- Compiling architecture SYN of mult
-# End time: 17:18:56 on Apr 27,2018, Elapsed time: 0:00:00
+# End time: 19:24:49 on Apr 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 17:18:56 on Apr 27,2018
+# Start time: 19:24:49 on Apr 27,2018
 # vcom -reportprogress 300 -93 -work work ../src/FM_Mod_tb.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -112,10 +112,10 @@
 # ** Warning: ../src/FM_Mod_tb.vhd(37): (vcom-1207) An abstract literal and an identifier must have a separator between them.
 # ** Warning: ../src/FM_Mod_tb.vhd(38): (vcom-1207) An abstract literal and an identifier must have a separator between them.
 # ** Warning: ../src/FM_Mod_tb.vhd(88): (vcom-1207) An abstract literal and an identifier must have a separator between them.
-# End time: 17:18:56 on Apr 27,2018, Elapsed time: 0:00:00
+# End time: 19:24:49 on Apr 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 3
 # vsim -novopt FM_Mod_tb 
-# Start time: 17:18:57 on Apr 27,2018
+# Start time: 19:24:49 on Apr 27,2018
 # //  ModelSim DE-64 10.6c Jul 26 2017
 # //
 # //  Copyright 1991-2017 Mentor Graphics Corporation
@@ -152,6 +152,11 @@
 # Loading work.fsm_adsr(behave)
 # Loading work.mult(syn)
 # Loading work.generic_counter(beh)
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: zxc5408  Hostname: ECTET-1360-16  ProcessID: 2328
+#           Attempting to use alternate WLF file "./wlftk9h3mv".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftk9h3mv
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ns  Iteration: 0  Instance: /fm_mod_tb/uut/ADSR_inst/mult_inst/lpm_mult_component
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
@@ -172,3 +177,5 @@
 #    Time: 0 ns  Iteration: 2  Instance: /fm_mod_tb/uut/ADSR_inst/mult_inst/lpm_mult_component
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ns  Iteration: 2  Instance: /fm_mod_tb/uut/ADSR_inst/mult_inst/lpm_mult_component
+# End time: 19:27:28 on Apr 27,2018, Elapsed time: 0:02:39
+# Errors: 0, Warnings: 22

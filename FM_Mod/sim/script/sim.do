@@ -11,4 +11,4 @@ vcom -93 -work work ../../../ADSR/mult.vhd
 vcom -93 -work work ../src/FM_Mod_tb.vhd
 vsim -novopt FM_Mod_tb
 do wave.do
-run 1000 us
+run 1000ms

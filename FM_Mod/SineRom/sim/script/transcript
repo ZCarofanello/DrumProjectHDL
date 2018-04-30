@@ -1,43 +1,76 @@
-# do sim.do 
+# do sim.do
 # ** Warning: (vlib-34) Library already exists at "work".
-# 
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 19:41:42 on Apr 27,2018
+# vcom -reportprogress 300 -93 -work work ../../SineRom.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity SineRom
 # -- Compiling architecture rtl of SineRom
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# End time: 19:41:42 on Apr 27,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 19:41:42 on Apr 27,2018
+# vcom -reportprogress 300 -93 -work work ../../SineRomMem.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package altera_mf_components
 # -- Compiling entity SineRomMem
 # -- Compiling architecture SYN of sinerommem
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# End time: 19:41:43 on Apr 27,2018, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 19:41:43 on Apr 27,2018
+# vcom -reportprogress 300 -93 -work work ../../../Freq2Steps/Freq2Steps.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity Freq2Steps
 # -- Compiling architecture rtl of Freq2Steps
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# End time: 19:41:43 on Apr 27,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 19:41:43 on Apr 27,2018
+# vcom -reportprogress 300 -93 -work work ../../../Freq2Steps/Freq2StepsMult.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity Freq2StepsMult
 # -- Compiling architecture SYN of freq2stepsmult
-# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# End time: 19:41:43 on Apr 27,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
+# Start time: 19:41:43 on Apr 27,2018
+# vcom -reportprogress 300 -93 -work work ../src/SineRom_tb.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
 # -- Compiling entity SineRom_tb
 # -- Compiling architecture arch of SineRom_tb
-# ** Warning: [4] ../src/SineRom_tb.vhd(25): (vcom-1207) An abstract literal and an identifier must have a separator between them.
-# ** Warning: [4] ../src/SineRom_tb.vhd(26): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: ../src/SineRom_tb.vhd(25): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# ** Warning: ../src/SineRom_tb.vhd(26): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+# End time: 19:41:43 on Apr 27,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
 # vsim -novopt SineRom_tb 
+# Start time: 19:41:43 on Apr 27,2018
+# //  ModelSim DE-64 10.6c Jul 26 2017
+# //
+# //  Copyright 1991-2017 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim DE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -57,22 +90,23 @@
 # Loading altera_mf.altera_device_families(body)
 # Loading altera_mf.altsyncram(translated)
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-# 
 #           File in use by: zxc5408  Hostname: ECTET-1360-07  ProcessID: 10900
-# 
-#           Attempting to use alternate WLF file "./wlftcxd5v6".
+#           Attempting to use alternate WLF file "./wlfttr8156".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-# 
-#           Using alternate file: ./wlftcxd5v6
-# 
+#           Using alternate file: ./wlfttr8156
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /sinerom_tb/uut/Freq2Steps_inst/Freq2StepsMult_inst/lpm_mult_component
+#    Time: 0 ns  Iteration: 0  Instance: /sinerom_tb/uut/Freq2Steps_inst/Freq2StepsMult_inst/lpm_mult_component
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /sinerom_tb/uut/Freq2Steps_inst/Freq2StepsMult_inst/lpm_mult_component
+#    Time: 0 ns  Iteration: 0  Instance: /sinerom_tb/uut/Freq2Steps_inst/Freq2StepsMult_inst/lpm_mult_component
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 0  Instance: /sinerom_tb/uut/Freq2Steps_inst/Freq2StepsMult_inst/lpm_mult_component
+#    Time: 0 ns  Iteration: 0  Instance: /sinerom_tb/uut/Freq2Steps_inst/Freq2StepsMult_inst/lpm_mult_component
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /sinerom_tb/uut/Freq2Steps_inst/Freq2StepsMult_inst/lpm_mult_component
+#    Time: 0 ns  Iteration: 1  Instance: /sinerom_tb/uut/Freq2Steps_inst/Freq2StepsMult_inst/lpm_mult_component
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ps  Iteration: 1  Instance: /sinerom_tb/uut/Freq2Steps_inst/Freq2StepsMult_inst/lpm_mult_component
+#    Time: 0 ns  Iteration: 1  Instance: /sinerom_tb/uut/Freq2Steps_inst/Freq2StepsMult_inst/lpm_mult_component
+run
+run
+run
+run
+run
 run

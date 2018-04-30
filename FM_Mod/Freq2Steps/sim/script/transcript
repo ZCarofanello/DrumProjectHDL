@@ -1,7 +1,7 @@
 # do sim.do
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 14:38:21 on Apr 15,2018
+# Start time: 19:26:14 on Apr 27,2018
 # vcom -reportprogress 300 -93 -work work ../../Freq2Steps.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -9,20 +9,20 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity Freq2Steps
 # -- Compiling architecture rtl of Freq2Steps
-# End time: 14:38:21 on Apr 15,2018, Elapsed time: 0:00:00
+# End time: 19:26:14 on Apr 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 14:38:21 on Apr 15,2018
+# Start time: 19:26:14 on Apr 27,2018
 # vcom -reportprogress 300 -93 -work work ../../Freq2StepsMult.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity Freq2StepsMult
 # -- Compiling architecture SYN of freq2stepsmult
-# End time: 14:38:21 on Apr 15,2018, Elapsed time: 0:00:00
+# End time: 19:26:15 on Apr 27,2018, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim DE-64 vcom 10.6c Compiler 2017.07 Jul 26 2017
-# Start time: 14:38:21 on Apr 15,2018
+# Start time: 19:26:15 on Apr 27,2018
 # vcom -reportprogress 300 -93 -work work ../src/Freq2Steps_tb.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -31,10 +31,10 @@
 # -- Compiling entity Freq2Steps_tb
 # -- Compiling architecture arch of Freq2Steps_tb
 # ** Warning: ../src/Freq2Steps_tb.vhd(23): (vcom-1207) An abstract literal and an identifier must have a separator between them.
-# End time: 14:38:21 on Apr 15,2018, Elapsed time: 0:00:00
+# End time: 19:26:15 on Apr 27,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1
 # vsim -novopt Freq2Steps_tb 
-# Start time: 14:38:21 on Apr 15,2018
+# Start time: 19:26:15 on Apr 27,2018
 # //  ModelSim DE-64 10.6c Jul 26 2017
 # //
 # //  Copyright 1991-2017 Mentor Graphics Corporation
@@ -59,26 +59,11 @@
 # Loading lpm.lpm_components
 # Loading lpm.lpm_hint_evaluation(body)
 # Loading lpm.lpm_mult(lpm_syn)
-# ** Error: Cannot open macro file: wave.do
-# Error in macro ./sim.do line 6
-# Cannot open macro file: wave.do
-#     while executing
-# "do wave.do"
-add wave -position insertpoint  \
-sim:/freq2steps_tb/uut/i_clk \
-sim:/freq2steps_tb/uut/i_reset_n \
-sim:/freq2steps_tb/uut/i_Frequency \
-sim:/freq2steps_tb/uut/o_Steps \
-sim:/freq2steps_tb/uut/Mult_Out_Full \
-sim:/freq2steps_tb/uut/Mult_Out_Concat \
-sim:/freq2steps_tb/uut/Freq_In_Ext
 # ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
 #           File in use by: zxc5408  Hostname: ECTET-1360-07  ProcessID: 10900
-#           Attempting to use alternate WLF file "./wlftgna25c".
+#           Attempting to use alternate WLF file "./wlftatjf28".
 # ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftgna25c
-restart
-run
+#           Using alternate file: ./wlftatjf28
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ns  Iteration: 0  Instance: /freq2steps_tb/uut/Freq2StepsMult_inst/lpm_mult_component
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
@@ -89,9 +74,5 @@ run
 #    Time: 0 ns  Iteration: 1  Instance: /freq2steps_tb/uut/Freq2StepsMult_inst/lpm_mult_component
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ns  Iteration: 1  Instance: /freq2steps_tb/uut/Freq2StepsMult_inst/lpm_mult_component
-run
-run
-run
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf S:/EEET-461/Drum_Synth/source/IP/FM_Mod/Freq2Steps/sim/script/wave.do
-# End time: 14:39:45 on Apr 15,2018, Elapsed time: 0:01:24
-# Errors: 3, Warnings: 10
+# End time: 19:26:32 on Apr 27,2018, Elapsed time: 0:00:17
+# Errors: 0, Warnings: 12

@@ -35,7 +35,7 @@ component FM_Mod IS
 end component FM_Mod;
 
 constant period           : time := 20ns;
-constant SamplePeriod     : time := 500ns;
+constant SamplePeriod     : time := 20us;
 signal trigger_tb          : std_logic := '0';
 signal clk                : std_logic := '0';
 signal reset              : std_logic := '0';
@@ -85,7 +85,7 @@ end process;
 trigger_proc: process
   begin
     trigger_tb <= not trigger_tb;
-    wait for 500us;
+    wait for 50ms;
 end process;  
 
 uut: FM_Mod  
